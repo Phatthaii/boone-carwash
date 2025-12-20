@@ -4,7 +4,7 @@ const supabaseUrl = "https://rsqhbaimdnmcbaiaxaxe.supabase.co";
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzcWhiYWltZG5tY2JhaWF4YXhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYxNTQ5MjYsImV4cCI6MjA4MTczMDkyNn0.yeGykOoKE_C0P4Gw7RUVTudj2n1kXEARYuZte9EFr5E";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const LIFF_ID = "2008709391-XJrxbtl9";
+const LIFF_ID = "2008737258-42xPtBiP";
 
 async function main() {
     try {
