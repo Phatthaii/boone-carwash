@@ -1,1 +1,113 @@
+:root {
+    --primary-color: #004aad; /* Boone Blue */
+    --secondary-color: #f0f8ff; /* Light Blue Background */
+    --text-color: #333;
+    --white: #ffffff;
+    --error: #e74c3c;
+    --success: #2ecc71;
+}
+
+body {
+    font-family: 'Kanit', sans-serif; /* Recommended if imported, otherwise default sans */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--secondary-color);
+    margin: 0;
+    padding: 20px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: var(--white);
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 74, 173, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    color: #666;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+}
+
+button {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #003380;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#statusMessage {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
 
