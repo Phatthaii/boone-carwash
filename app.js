@@ -1,7 +1,7 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 const supabaseUrl = "https://rsqhbaimdnmcbaiaxaxe.supabase.co";
-const supabaseKey = "sb_publishable_MCM2rfldeNbAElvO5dHWRg_kErAhrlE";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzcWhiYWltZG5tY2JhaWF4YXhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYxNTQ5MjYsImV4cCI6MjA4MTczMDkyNn0.yeGykOoKE_C0P4Gw7RUVTudj2n1kXEARYuZte9EFr5E";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 document.getElementById("bookingForm").addEventListener("submit", async (e) => {
