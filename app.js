@@ -40,6 +40,7 @@ document.getElementById("bookingForm").addEventListener("submit", async (e) => {
         phone: document.getElementById("phone").value,
         car: document.getElementById("car").value,
         plate_number: document.getElementById("plate").value,
+        service_type: document.getElementById("serviceType").value,
         date: document.getElementById("date").value,
         time: document.getElementById("time").value,
         user_id: document.getElementById("userId").value
