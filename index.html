@@ -5,16 +5,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boone AutoCare</title>
-    <link rel="stylesheet" href="style.css?v=4" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=5" />
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 </head>
 
 <body>
 
+    <div class="background-overlay"></div>
     <div class="container">
         <header>
+            <div class="logo-area">
+                <i class="fas fa-car-wash fa-3x"></i>
+            </div>
             <h1>Boone AutoCare</h1>
-            <p>ระบบจองคิวล้างรถ</p>
+            <p>ระบบจองคิวล้างรถแบบพรีเมียม</p>
         </header>
 
         <form id="bookingForm">
@@ -23,27 +31,27 @@
             <input type="hidden" id="displayName" />
 
             <div class="form-group">
-                <label>ชื่อ - นามสกุล</label>
+                <label><i class="fas fa-user"></i> ชื่อ - นามสกุล</label>
                 <input type="text" id="name" placeholder="ระบุชื่อของคุณ" required />
             </div>
 
             <div class="form-group">
-                <label>เบอร์โทรศัพท์</label>
+                <label><i class="fas fa-phone"></i> เบอร์โทรศัพท์</label>
                 <input type="tel" id="phone" placeholder="08x-xxx-xxxx" required />
             </div>
 
             <div class="form-group">
-                <label>ยี่ห้อ / รุ่นรถ</label>
+                <label><i class="fas fa-car-side"></i> ยี่ห้อ / รุ่นรถ</label>
                 <input type="text" id="car" placeholder="เช่น Honda Civic" required />
             </div>
 
             <div class="form-group">
-                <label>เลขทะเบียน</label>
+                <label><i class="fas fa-id-card"></i> เลขทะเบียน</label>
                 <input type="text" id="plate" placeholder="เช่น กก-1234" required />
             </div>
 
             <div class="form-group">
-                <label>ประเภทบริการ</label>
+                <label><i class="fas fa-spray-can"></i> ประเภทบริการ</label>
                 <select id="serviceType" required>
                     <option value="" disabled selected>-- เลือกบริการ --</option>
                     <option value="ล้างสี ดูดฝุ่น">ล้างสี ดูดฝุ่น (Standard)</option>
@@ -56,11 +64,11 @@
 
             <div class="form-row">
                 <div class="form-group">
-                    <label>วันที่จอง</label>
+                    <label><i class="far fa-calendar-alt"></i> วันที่จอง</label>
                     <input type="date" id="date" required />
                 </div>
                 <div class="form-group">
-                    <label>เวลา</label>
+                    <label><i class="far fa-clock"></i> เวลา</label>
                     <input type="time" id="time" required />
                 </div>
             </div>
