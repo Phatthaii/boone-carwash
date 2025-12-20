@@ -1,55 +1,77 @@
 :root {
+    --primary-gradient: linear-gradient(135deg, #004aad 0%, #007aff 100%);
+    --bg-gradient: linear-gradient(180deg, #f0f4f8 0%, #dbeafe 100%);
     --primary-color: #004aad;
-    /* Boone Blue */
-    --secondary-color: #f0f8ff;
-    /* Light Blue Background */
-    --text-color: #333;
+    --text-color: #1e293b;
+    --label-color: #475569;
     --white: #ffffff;
-    --error: #e74c3c;
-    --success: #2ecc71;
+    --input-bg: #f8fafc;
+    --input-border: #e2e8f0;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 15px -3px rgba(0, 74, 173, 0.1), 0 4px 6px -2px rgba(0, 74, 173, 0.05);
 }
 
 body {
     font-family: 'Kanit', sans-serif;
-    /* Recommended if imported, otherwise default sans */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--secondary-color);
+    background: var(--bg-gradient);
     margin: 0;
     padding: 20px;
     color: var(--text-color);
     display: flex;
     justify-content: center;
+    align-items: center;
     min-height: 100vh;
 }
 
 .container {
     background: var(--white);
     width: 100%;
-    max-width: 450px;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 74, 173, 0.1);
+    max-width: 420px;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative top bar */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--primary-gradient);
 }
 
 header {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.logo-area {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    opacity: 0.9;
 }
 
 header h1 {
     color: var(--primary-color);
     margin: 0;
-    font-size: 28px;
+    font-size: 26px;
+    font-weight: 600;
 }
 
 header p {
-    color: #666;
+    color: #64748b;
     margin-top: 5px;
     font-size: 14px;
+    font-weight: 300;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-row {
@@ -63,31 +85,45 @@ header p {
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: 500;
     font-size: 14px;
+    color: var(--label-color);
+}
+
+label i {
     color: var(--primary-color);
+    margin-right: 5px;
+    width: 16px;
+    text-align: center;
 }
 
 input,
 select {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
+    padding: 12px 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: 'Kanit', sans-serif;
+    color: var(--text-color);
+    background-color: var(--input-bg);
     box-sizing: border-box;
-    transition: 0.3s;
-    background-color: #fff;
-    /* Force white background */
+    transition: all 0.3s ease;
     height: 48px;
-    /* Consistent height */
     appearance: none;
-    /* Remove default OS styling */
     -webkit-appearance: none;
 }
 
-/* Add custom arrow for select */
+input:focus,
+select:focus {
+    border-color: #004aad;
+    background-color: var(--white);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 74, 173, 0.1);
+}
+
+/* Custom arrow for select */
 .form-group {
     position: relative;
 }
@@ -96,42 +132,44 @@ select {
     cursor: pointer;
     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23004aad%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
     background-repeat: no-repeat;
-    background-position: right 12px top 50%;
-    background-size: 12px auto;
-}
-
-input:focus,
-select:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+    background-position: right 15px top 50%;
+    background-size: 10px auto;
 }
 
 button {
     width: 100%;
-    background-color: var(--primary-color);
+    background: var(--primary-gradient);
     color: var(--white);
-    padding: 14px;
+    padding: 15px;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 16px;
-    font-weight: bold;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
-    transition: 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 74, 173, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
-    background-color: #003380;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 10px rgba(0, 74, 173, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 button:disabled {
-    background-color: #ccc;
+    background: #cbd5e1;
     cursor: not-allowed;
+    box-shadow: none;
 }
 
 #statusMessage {
     margin-top: 15px;
     text-align: center;
     font-size: 14px;
+    color: var(--success);
 }
