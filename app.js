@@ -5,19 +5,19 @@ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 document.getElementById("bookingForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const car = document.getElementById("car").value;
+    const name = document.getElementById("name").value;
+    const car = document.getElementById("car").value;
 
-  const { error } = await supabase
-    .from("bookings")
-    .insert([{ name, car }]);
+    const { error } = await supabase
+        .from("bookings")
+        .insert([{ name, car }]);
 
-  if (error) {
-    alert("บันทึกไม่สำเร็จ");
-  } else {
-    alert("จองสำเร็จ");
-  }
+    if (error) {
+        console.error("Supabase Error:", error);
+        alert(`บันทึกไม่สำเร็จ: ${error.message} (${error.code || 'No code'})`);
+    } else {
+        alert("จองสำเร็จ");
+    }
 });
-
